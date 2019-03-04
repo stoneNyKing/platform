@@ -1,0 +1,102 @@
+{
+	"mysql": {
+		"filedb":{
+			"database": "filedb",
+			"port": 3306,
+			"schema": "filedb",
+			"user": "health",
+			"host": "zdev",
+			"passwd": "123health"
+		}
+	},
+	"rpcx": {
+		"server": {
+			"oasvc_base_path":"/rpcx_9060",
+			"conf_base_path":"/rpcx_104",
+			"oam_base_path": "/rpcx_112"
+		}
+	},
+	"consul":{
+		"check":{
+			"interval":"30s",
+			"timeout":"2s"
+		}
+	},
+	"self": {
+		"http_enable": true,
+		"https_enable": false,
+		"prefix": "/service/107",
+		"system":{
+			"sid":"107",
+			"dbdriver":"mysql",
+			"loglevel": "FINEST",
+			"logfile":"d:\\work\\log\\filesvc.log",
+			"env":"prod",
+			"domain_name":"http://www.scoway.cn:8020",
+			"service_name":"ms-107-filesvc",
+			"auth": "false",
+			"oasvc_service_url":"http://zdev/service/9060",
+			"ousvc_service_url":"http://zdev/service/9058",
+			"usercheck_url":"http://zdev/service/9058/user/check"
+		},
+		"http":{
+			"host": "127.0.0.1",
+			"port": 10107
+		},
+		"https":{
+			"host": "127.0.0.1",
+			"port": 8107
+		},
+		"zipkin":{
+			"zipkin_url": "http://192.168.2.16:9411/api/v2/spans",
+			"kafka_address": ""
+		}
+	},
+
+	"meta":{
+		"upload_filename":"uploadfile"
+	},
+
+	"apps":{
+		"appid_100":"lancher",
+		"appid_101":"lancher",
+		"appid_102":"lancher",
+		"appid_7":"lancher"
+	},
+
+	"oss":{
+		"accessKey":"xxx",
+		"accessSecret":"xxx",
+		"region":"oss-cn-qingdao.aliyuncs.com",
+		"priv_region":"oss-cn-qingdao-internal.aliyuncs.com",
+		"network":1,
+		"lancher":{
+			"bucket":"xxx-oss",
+			"endpoint":""
+		},
+		"proxy":{
+			"enable":"true",
+			"host":"127.0.0.1",
+			"port": 18081,
+			"redirect":"www.schao.cn:8181"
+		}
+	},
+	"site1":{
+		"audio":{
+			"path":"/var/www/attach",
+			"prefix":"/attach",
+			"storage":"fs"
+		},
+		"image":{
+			"storage":"fs",
+			"path":"/var/www/attach",
+			"prefix":"/attach",
+			"crop":"false"
+		},
+		"regular":{
+			"path":"/var/www/attach",
+			"prefix":"/attach",
+			"storage":"fs"
+		}
+	}
+}

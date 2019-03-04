@@ -1,0 +1,68 @@
+{
+	"mysql": {
+		"authdb": {
+			"database": "authdb",
+			"port": 3306,
+			"schema": "authdb",
+			"user": "health",
+			"host": "sasdb",
+			"passwd": "123health"
+		}
+	},
+	"redis": {
+		"queue": {
+			"database": 0,
+			"enable": "true",
+			"host": "sas-redis",
+			"port": 6379,
+			"pool": 10
+		}
+	},
+	"rpcx": {
+		"server": {
+			"oam_base_path": "/rpcx_112",
+			"conf_base_path": "/rpcx_104",
+			"auth_base_path": "/rpcx_103"
+		}
+	},
+	"consul":{
+		"check":{
+			"interval":"30s",
+			"timeout":"2s"
+		}
+	},
+	"self": {
+		"http_enable": true,
+		"https_enable": false,
+		"prefix": "/service/103",
+		"system": {
+			"loglevel": "FINEST",
+			"logfile": "d:\\work\\log\\auth.log",
+			"dbdriver": "mysql",
+			"env": "prod",
+			"service_name": "ms-103-authsvc",
+			"auth": "false",
+			"service_url": "http://www.schao.cn:8181/service",
+			"usercheck_url": "http://sas-nginx:8081/service/9058/user/check",
+			"oasvc_service_url":"http://sas-nginx:8081/service/9060",
+			"ousvc_service_url":"http://sas-nginx:8081/service/9058"
+		},
+		"http": {
+			"host": "0.0.0.0",
+			"port": 10103
+		},
+		"https": {
+			"host": "0.0.0.0",
+			"port": 8103
+		},
+		"rpcx": {
+			"address": "127.0.0.1:20103",
+			"base_path": "/rpcx_103",
+			"network": "tcp"
+		},
+		"zipkin": {
+			"zipkin_url": "http://192.168.2.16:9411/api/v2/spans",
+			"kafka_address": "192.168.2.16:9092"
+		}
+	}
+}

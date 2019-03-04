@@ -1,0 +1,7 @@
+/.idea
+.editorconfig
+/dist
+/build
+.project
+/.externalToolBuilders
+/.settings

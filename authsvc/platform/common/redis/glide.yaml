@@ -1,0 +1,3 @@
+package: yhhealth/common/redis
+import:
+- package: github.com/libra9z/hoisie-redis

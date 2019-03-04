@@ -1,0 +1,71 @@
+{
+    "mysql": {
+        "staffdb": {
+            "database": "staffdb",
+            "schema": "staffdb",
+            "port": 3306,
+            "user": "health",
+            "host": "ai",
+            "passwd": "123health"
+        },
+        "oadb": {
+            "database": "oadb",
+            "schema": "oadb",
+            "port": 3306,
+            "user": "health",
+            "host": "ai",
+            "passwd": "123health"
+        }
+    },
+    "redis": {
+        "queue": {
+            "database": 0,
+            "enable": "true",
+            "host": "redis",
+            "port": 6379,
+            "pool": 10
+        }
+    },
+    "rpcx":{
+        "server":{
+            "oam_base_path":"/rpcx_112",
+            "oasvc_base_path":"/rpcx_9060",
+            "conf_base_path":"/rpcx_104",
+            "hrsvc_base_path":"/rpcx_114"
+        }
+    },
+    "self": {
+        "http_enable": true,
+        "https_enable": false,
+        "prefix": "/service/114",
+        "system": {
+			"loglevel": "FINEST",
+			"logfile": "../logs/hrsvc.log",
+			"env":"prod",
+            "dbdriver":"mysql",
+			"service_name":"ms-114-hrsvc",
+			"auth": "false",
+			"service_url":"http://hdev/service",
+			"oasvc_service_url":"http://hdev/service/9060",
+			"ousvc_service_url":"http://hdev/service/9058",
+			"usercheck_url":"http://hdev/service/9058/user/check"
+        },
+        "http":{
+            "host": "0.0.0.0",
+			"port": 10114
+        },
+        "https":{
+            "host": "0.0.0.0",
+            "port": 8114
+        },
+        "rpcx": {
+            "address": "127.0.0.1:20114",
+            "base_path": "/rpcx_114",
+            "network": "tcp"
+        },
+		"zipkin":{
+          "zipkin_url": "",
+          "kafka_address": ""
+		}
+    }
+}

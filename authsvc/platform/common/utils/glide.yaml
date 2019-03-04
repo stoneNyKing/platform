@@ -1,0 +1,11 @@
+package: yhhealth/common/utils
+import:
+- package: github.com/disintegration/imaging
+  version: ^1.2.4
+- package: github.com/fgrid/uuid
+  version: ^0.1.0
+- package: github.com/hashicorp/consul
+  version: ^1.0.1
+  subpackages:
+  - api
+- package: github.com/libra9z/mahonia

@@ -1,0 +1,67 @@
+{
+	"mysql": {
+		"sysconfdb": {
+			"database": "sysconfdb",
+			"schema": "sysconfdb",
+			"port": 3306,
+			"user": "health",
+			"host": "hdev",
+			"passwd": "123health"
+		}
+	},
+	"redis": {
+		"queue": {
+			"database": 0,
+			"enable": "true",
+			"host": "hdev",
+			"port": 6379,
+			"pool": 10
+		}
+	},
+	"rpcx": {
+		"server": {
+			"oam_base_path": "/rpcx_112",
+			"conf_base_path": "/rpcx_104"
+		}
+	},
+	"consul":{
+		"check":{
+			"interval":"30s",
+			"timeout":"2s"
+		}
+	},
+	"self": {
+		"http_enable": true,
+		"https_enable": false,
+		"prefix": "/service/104",
+
+		"system": {
+			"loglevel": "FINEST",
+			"logfile": "d:\\work\\log\\confsvc.log",
+			"env": "prod",
+			"service_name": "ms-104-confsvc",
+			"auth": "false",
+			"dbdriver": "mysql",
+			"usercheck_url": "http://hdev/service/9058/user/check",
+			"oasvc_service_url":"http://hdev/service/9060",
+			"ousvc_service_url":"http://hdev/service/9058"
+		},
+		"http": {
+			"host": "0.0.0.0",
+			"port": 10104
+		},
+		"https": {
+			"host": "0.0.0.0",
+			"port": 8104
+		},
+		"rpcx": {
+			"address": "127.0.0.1:20104",
+			"base_path": "/rpcx_104",
+			"network": "tcp"
+		},
+		"zipkin": {
+			"zipkin_url": "http://192.168.2.16:9411/api/v2/spans",
+			"kafka_address": "192.168.2.16:9092"
+		}
+	}
+}

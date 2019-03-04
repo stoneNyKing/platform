@@ -1,0 +1,82 @@
+
+{
+  "mysql": {
+    "oudb": {
+      "database": "oudb",
+      "schema":"oudb",
+      "port": 3306,
+      "user": "health",
+      "host": "zdev",
+      "passwd": "123health"
+    }
+  },
+  "redis": {
+    "queue": {
+      "database": 0,
+      "enable": "true",
+      "host": "127.0.0.1",
+      "port": 6379,
+      "pool": 10
+    }
+  },
+  "rpcx":{
+    "server":{
+      "oam_base_path":"/rpcx_112",
+      "sms_base_path":"/rpcx_105",
+      "conf_base_path":"/rpcx_104",
+      "ousvc_base_path":"/rpcx_9058"
+    }
+  },
+  "consul":{
+    "check":{
+      "interval":"30s",
+      "timeout":"2s"
+    }
+  },
+
+  "weixin":{
+    "appid":"wxc92ea261d83943cc",
+    "oriid":"gh_cbcaaf22a858",
+    "token":"e7968aef030ebd1568c0b17e57badc09",
+    "redirect_url":"http://www.laoyou99.cn/wx/phc",
+    "app_secret":"f2f01891fa65f1e648185cd4180fdd21",
+    "scope":"",
+    "aes_key_encode":"9KKczRbQGbSsUxb9pqxK4krXPuHLEPj0BxXRsihlrU0"
+  },
+  "self": {
+    "http_enable": true,
+    "https_enable": false,
+    "prefix": "/service/9058",
+
+    "system": {
+      "loglevel": "FINEST",
+      "logfile": "d:\\work\\log\\ousvc.log",
+      "dbdriver":"mysql",
+      "env":"prod",
+      "service_name":"ms-9058-ousvc",
+      "sms_url":"http://127.0.0.1:10209/service/209/sms/push"
+    },
+    "session":{
+      "key":"session-key",
+      "storeip":"zdev",
+      "storeport":"6379"
+    },
+    "http":{
+      "host": "0.0.0.0",
+      "port": 9058
+    },
+    "https":{
+      "host": "0.0.0.0",
+      "port": 8058
+    },
+    "rpcx": {
+      "address": "127.0.0.1:9258",
+      "base_path": "/rpcx_9058",
+      "network": "tcp"
+    },
+    "zipkin":{
+      "zipkin_url": "http://192.168.2.16:9411/api/v2/spans",
+      "kafka_address": "192.168.2.16:9092"
+    }
+  }
+}

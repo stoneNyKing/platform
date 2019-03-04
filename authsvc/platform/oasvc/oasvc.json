@@ -1,0 +1,72 @@
+
+{
+  "mysql": {
+    "oadb": {
+      "database": "oadb",
+      "schema":"oadb",
+      "port": 3306,
+      "user": "health",
+      "host": "ai",
+      "passwd": "123health"
+    }
+  },
+  "redis": {
+    "queue": {
+      "database": 0,
+      "enable": "true",
+      "host": "127.0.0.1",
+      "port": 6379,
+      "pool": 10
+    }
+  },
+  "rpcx":{
+    "server":{
+      "oam_base_path":"/rpcx_112",
+      "sms_base_path":"/rpcx_105",
+      "conf_base_path":"/rpcx_104",
+      "sysmgr_base_path":"/rpcx_102",
+      "oasvc_base_path":"/rpcx_9060"
+    }
+  },
+  "consul":{
+    "check":{
+      "interval":"30s",
+      "timeout":"2s"
+    }
+  },
+  "self": {
+    "http_enable": true,
+    "https_enable": false,
+    "prefix": "/service/9060",
+    "system": {
+      "loglevel": "FINEST",
+      "logfile": "d:\\work\\log\\oasvc.log",
+      "dbdriver":"mysql",
+      "env":"prod",
+      "service_name":"ms-9060-oasvc",
+      "sms_url":"http://127.0.0.1:10209/service/209/sms/push"
+    },
+    "session":{
+      "key":"session-key",
+      "storeip":"127.0.0.1",
+      "storeport":"6379"
+    },
+    "http":{
+      "host": "127.0.0.1",
+      "port": 9060
+    },
+    "https":{
+      "host": "0.0.0.0",
+      "port": 8060
+    },
+    "rpcx": {
+      "address": "127.0.0.1:19060",
+      "base_path": "/rpcx_9060",
+      "network": "tcp"
+    },
+    "zipkin":{
+      "zipkin_url": "",
+      "kafka_address": ""
+    }
+  }
+}
